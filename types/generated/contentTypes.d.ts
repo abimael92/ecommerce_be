@@ -661,6 +661,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     >;
     firstname: Attribute.String;
     lastname: Attribute.String;
+    admin: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -724,6 +725,7 @@ export interface ApiGameGame extends Schema.CollectionType {
     singularName: 'game';
     pluralName: 'games';
     displayName: 'Game';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -740,9 +742,9 @@ export interface ApiGameGame extends Schema.CollectionType {
     slug: Attribute.UID<'api::game.game', 'title'>;
     summary: Attribute.Text & Attribute.Required;
     video: Attribute.String & Attribute.Required;
-    cover: Attribute.Media & Attribute.Required;
-    wallpaper: Attribute.Media & Attribute.Required;
-    screenshots: Attribute.Media & Attribute.Required;
+    cover: Attribute.Media;
+    wallpaper: Attribute.Media;
+    screenshots: Attribute.Media;
     releaseDate: Attribute.Date & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
