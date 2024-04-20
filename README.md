@@ -1,14 +1,58 @@
-# 🚀 Getting started with Strapi
+# 🚀 Getting started
+
+Before you begin setting up Strapi, ensure you have the necessary accounts and configurations in place.
+
+## AWS Setup
+
+1. **Create an AWS Account**:
+
+   - Sign up for an account on [Amazon Web Services (AWS)](https://aws.amazon.com/).
+
+2. **Set Up S3 Bucket**:
+
+   - Go to the S3 service in AWS and create a bucket with ACL enabled.
+
+3. **IAM Configuration**:
+
+   - In IAM (Identity and Access Management), create a new policy with permissions for the S3 service.
+   - Select all actions for S3 and define the resource bucket ARN as `{bucketname}` with any object.
+   - Save the policy and attach it to a new user.
+
+4. **Access Credentials**:
+
+   - Once the user is created, obtain the access key and secret access key.
+   - Save these credentials securely as they are required for Strapi configuration.
+
+   ## 📝 Reminder:
+
+Save these credentials securely as they are required for Strapi configuration.
+
+## Strapi Configuration
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+
+1. **Configure Strapi with S3**:
+
+   - In the Strapi admin panel, navigate to Plugins > AWS S3.
+   - Follow the instructions to set up S3 integration.
+   - Create a `.env` file based on the provided `env.example` and include the AWS credentials.
+
+2. **Activate CORS**:
+
+   - Under `config/middleware`, enable CORS to allow cross-origin requests for uploading images.
+
+3. **Start Strapi**:
+   - Use the provided CLI commands to start your Strapi application.
+
+## Stripe Account
+
+Before enabling shopping features, ensure you have an account with Stripe.
 
 ### `develop`
 
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
 
 ```
-npm run develop
-# or
 yarn develop
 ```
 
@@ -17,8 +61,6 @@ yarn develop
 Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
 
 ```
-npm run start
-# or
 yarn start
 ```
 
@@ -38,11 +80,9 @@ Strapi gives you many possible deployment options for your project including [St
 
 ## 📚 Learn more
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+For detailed instructions on Strapi setup and usage, refer to the official documentation and community resources provided below.
+
+Feel free to check out the Strapi GitHub repository. Your feedback and contributions are welcome!
 
 Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
 
@@ -54,4 +94,4 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 
 ---
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+<small style="position: absolute; bottom: 0; right: 0;">Gama1992!</small>
